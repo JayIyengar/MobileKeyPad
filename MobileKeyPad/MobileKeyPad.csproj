@@ -45,8 +45,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IKeyPadInitialiser.cs" />
-    <Compile Include="IKeyPadService.cs" />
+    <Compile Include="Interface\IKeyPadInitialiser.cs" />
+    <Compile Include="Interface\IKeyPadService.cs" />
     <Compile Include="JsonKeyPadIntialiser.cs" />
     <Compile Include="KeyPad.cs" />
     <Compile Include="KeyPadService.cs" />

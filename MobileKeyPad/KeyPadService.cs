@@ -17,8 +17,8 @@ namespace MobileKeyPad
         public KeyPadService()
         {            
             _keyPadIntialiser = new KeyPadIntialiser();
-            _inputKeyPad = _keyPadIntialiser.Initialise();
-            //_inputKeyPad = new JsonKeyPadIntialiser().Initialise();
+            //_inputKeyPad = _keyPadIntialiser.Initialise();
+            _inputKeyPad = new JsonKeyPadIntialiser().Initialise();            
         }
 
         public int CalculateTime(string userInput, out string keySequence)

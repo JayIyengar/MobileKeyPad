@@ -12,10 +12,13 @@ namespace MobileKeyPad
         const int CONSECUTIVE_PRESS_KEY_DURATION = 500;
 
         private InputKeyPad _inputKeyPad;
+        private IKeyPadInitialiser _keyPadIntialiser;
 
-        public KeyPadService(InputKeyPad inputKeyPad)
-        {
-            _inputKeyPad = inputKeyPad;
+        public KeyPadService()
+        {            
+            _keyPadIntialiser = new KeyPadIntialiser();
+            _inputKeyPad = _keyPadIntialiser.Initialise();
+            //_inputKeyPad = new JsonKeyPadIntialiser().Initialise();
         }
 
         public int CalculateTime(string userInput, out string keySequence)
@@ -38,7 +41,7 @@ namespace MobileKeyPad
                         totalMinimunTime += CONSECUTIVE_PRESS_KEY_DURATION;
                     }
 
-                    keySequence = keySequence + (sequenceNumber++).ToString() + ".Press Key - " + key.CharacterNumber.ToString() + " - "
+                    keySequence = keySequence + (sequenceNumber++).ToString() + ".Press Key - " + key.CharacterKey + " - "
                                 + key.CharacterOrder.ToString() + " Time(s)." + "\n";
 
                     totalMinimunTime += key.CharacterOrder * PRESS_KEY_DURATION;

@@ -14,13 +14,13 @@ namespace MobileKeyPad
     public class Key
     {
         public char Character { get; set; }
-        public int CharacterNumber { get; set; }
+        public string CharacterKey { get; set; }
         public int CharacterOrder { get; set; }
 
-        public Key(char character, int charDigit, int charOrder)
+        public Key(char character, string charKey, int charOrder)
         {
             this.Character = character;
-            this.CharacterNumber = charDigit;
+            this.CharacterKey = charKey;
             this.CharacterOrder = charOrder;
         }
     }

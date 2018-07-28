@@ -9,21 +9,12 @@ using System.Threading.Tasks;
 namespace MobileKeyPad
 {
     class Program
-    {
-        private InputKeyPad _inputKeyPad;
-        private IKeyPadService _keyPadService;
-        private IKeyPadInitialiser _keyPadIntialiser;
+    {        
+        private IKeyPadService _keyPadService;        
 
         public Program()
-        {
-            //var keyPad = new JsonKeyPadIntialiser().Initialise();
-
-            _keyPadIntialiser = new KeyPadIntialiser();
-
-            _inputKeyPad = _keyPadIntialiser.Initialise();            
-
-            _keyPadService = new KeyPadService(_inputKeyPad);
-
+        {  
+            _keyPadService = new KeyPadService();
         }
 
         static void Main(string[] args)
